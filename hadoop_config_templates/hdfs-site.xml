@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+        <description>Default block replication.
+                     Set to 1 for pseudo-distributed mode on a single node.
+                     Increase for a real multi-node cluster (typically 3).
+        </description>
+    </property>
+
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:///home/utilisateur/hadoop_data/hdfs/namenode</value>
+        <description>Directory where the NameNode stores its metadata (fsimage, edits log).
+                     IMPORTANT: Replace /home/utilisateur with the actual path to the user's home directory
+                     or another designated location. Ensure this directory exists and is writable by the Hadoop user.
+        </description>
+    </property>
+
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:///home/utilisateur/hadoop_data/hdfs/datanode</value>
+        <description>Directory where DataNodes store HDFS data blocks.
+                     IMPORTANT: Replace /home/utilisateur with the actual path to the user's home directory
+                     or another designated location. Ensure this directory exists and is writable by the Hadoop user.
+        </description>
+    </property>
+
+    <!-- Optionnel: Activer l'UI web pour HDFS (activé par défaut généralement) -->
+    <!--
+    <property>
+        <name>dfs.namenode.http-address</name>
+        <value>localhost:9870</value>
+        <description>The address and the base port where the NameNode Web UI will listen.
+                     Replace localhost with 0.0.0.0 or the server's hostname/IP if you need external access.
+        </description>
+    </property>
+    -->
+
+</configuration>
+

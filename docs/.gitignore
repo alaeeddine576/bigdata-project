@@ -1,0 +1,3 @@
+hadoop_data/, 
+logs/,
+ *.pyc, __pycache__
